@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 
 using System.IO;
+using System.Diagnostics;
 
 namespace GH_ThisFileLocation
 {
@@ -19,6 +20,7 @@ namespace GH_ThisFileLocation
 
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
+            pManager.AddBooleanParameter("Trigger botton", "open", "Open the folder this file path", GH_ParamAccess.item);
         }
 
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
@@ -33,9 +35,27 @@ namespace GH_ThisFileLocation
         /// to store data in output parameters.</param>
         protected override void SolveInstance(IGH_DataAccess DA)
         {
+            bool open = false;
+
+            if (!DA.GetData(0, ref open)) return;
+
             GH_Document doc = this.OnPingDocument();
             string filePath = doc.FilePath;
             string filePathOnly = Path.GetDirectoryName(filePath);
+
+            if (open)
+            {
+                try
+                {
+                  Process.Start(filePathOnly);
+                }
+                catch(Exception e)
+                {
+                    this.Component.AddRuntimeMessage(GH_RuntimeMessageLevel.Warning, e.GetType().ToString());
+                }
+
+            }
+
 
             DA.SetData(0, filePathOnly);
         }
