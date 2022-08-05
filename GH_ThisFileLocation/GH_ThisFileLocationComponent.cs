@@ -51,7 +51,7 @@ namespace GH_ThisFileLocation
                 }
                 catch(Exception e)
                 {
-                    this.Component.AddRuntimeMessage(GH_RuntimeMessageLevel.Warning, e.GetType().ToString());
+                    this.AddRuntimeMessage(GH_RuntimeMessageLevel.Warning, e.GetType().ToString());
                 }
 
             }
