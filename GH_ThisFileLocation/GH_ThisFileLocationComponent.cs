@@ -20,7 +20,7 @@ namespace GH_ThisFileLocation
 
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddBooleanParameter("Trigger botton", "open", "Open the folder this file path", GH_ParamAccess.item);
+            pManager.AddBooleanParameter("Trigger button", "open", "Open the folder this file path", GH_ParamAccess.item);
         }
 
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
