@@ -24,7 +24,6 @@ namespace GH_ThisFileLocation
 
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-
         }
 
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
@@ -32,35 +31,8 @@ namespace GH_ThisFileLocation
             pManager.AddTextParameter("FilePath", "FilePath", "This gh definition file path", GH_ParamAccess.item);
         }
 
-        /// <summary>
-        /// This is the method that actually does the work.
-        /// </summary>
-        /// <param name="DA">The DA object can be used to retrieve data from input parameters and
-        /// to store data in output parameters.</param>
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            //bool open = false;
-
-            //if (!DA.GetData(0, ref open)) return;
-
-            //GH_Document doc = this.OnPingDocument();
-            //string filePath = doc.FilePath;
-            //string filePathOnly = Path.GetDirectoryName(filePath);
-
-            //if (open)
-            //{
-            //    try
-            //    {
-            //      Process.Start(filePathOnly);
-            //    }
-            //    catch(Exception e)
-            //    {
-            //        this.AddRuntimeMessage(GH_RuntimeMessageLevel.Warning, e.GetType().ToString());
-            //    }
-
-            //}
-
-
             DA.SetData(0, FilePathOnly());
         }
 
