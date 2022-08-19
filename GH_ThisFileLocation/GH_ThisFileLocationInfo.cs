@@ -18,9 +18,9 @@ namespace GH_ThisFileLocation
         public override Guid Id => new Guid("D7A1CCF3-286B-42CD-8B44-6FE0441D7C64");
 
         //Return a string identifying you or your company.
-        public override string AuthorName => "masayaTKT";
+        public override string AuthorName => "masaya TAKATA";
 
         //Return a string representing your preferred contact details.
-        public override string AuthorContact => "";
+        public override string AuthorContact => "https://github.com/masayaTAKATA";
     }
 }
