@@ -56,6 +56,7 @@ namespace GH_ThisFileLocation
             Process.Start(path);
         }
 
+
         public class DoubleClick : GH_ComponentAttributes
         {
             public DoubleClick(IGH_Component component) : base(component)
